@@ -2,7 +2,7 @@
 	if (typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if (typeof define === 'function' && define.amd)
-	// 		define([], factory);
+	// define([], factory);
 		root["fhir"] = factory();
 	else if (typeof exports === 'object')
 		exports["fhir"] = factory();
@@ -876,6 +876,9 @@
 							}
 							if (args.count) {
 								params._count = args.count;
+							}
+							if (args.getpagesoffset) {
+								params._getpagesoffset = args.getpagesoffset;
 							}
 							args.params = params;
 							return h(args);
